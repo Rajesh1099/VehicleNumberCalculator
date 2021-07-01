@@ -1,0 +1,24 @@
+ body {
+     background-image: url('orange.jpeg');
+     background-repeat: no repeat;
+     background-size: cover;
+ }
+
+ div {
+     display: flex;
+     justify-content: center;
+     display: inline-block;
+ }
+
+ button {
+    
+    height: 50px;
+    width: 50px;
+    margin: 10px;
+    
+ }
+
+ input, button {
+    display: inline-block;
+    padding: 15px 35px;
+}

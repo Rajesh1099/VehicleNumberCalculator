@@ -1,0 +1,92 @@
+<!Doctype html>
+<html>
+    <meta lang="en-us">
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet"  href="style.css">
+    <title>Vehicle Registration Number </title>
+    <head>
+        
+        <style>
+            h1{
+                text-transform: uppercase;
+                text-align: center;
+                text-decoration: solid;
+                text-shadow: 3px 2px 5px red;
+               
+                font-family: sans-serif;
+                font-size: 20px;
+                margin-top: 50px;
+            }
+            form{text-align: center;}
+            input{padding: 10px;}
+            #preview{text-align: center;font-family:calibri;font-size: 18px;text-shadow: 3px 2px 5px rgb(102, 255, 0);}
+            </style>
+            </head>>
+    <body>
+              <h1>Vehicle Number Adder</h1>
+              <form id="form">
+                  <p><font color=white>
+               <b> Enter your vehicle number:</b><br> 
+                </font>
+                </p>
+                
+                  <input type="text" onkeypress="isInputNumber(event)" placeholder="Enter the last 4 digits" name="" id="number" pattern="[0-9]{4}" ><br>
+                  <button>Clear</button>
+                  <script src="script.js"></script>
+                  <input type="submit" value="Find">
+                 
+              </form>
+          
+        <p id="preview"></p>      
+    <script>
+             var x= document.getElementById("form");
+             x.onsubmit=function()
+        {
+             var num=document.getElementById("number").value;
+            
+             if(num=="")
+             {
+                alert("Please enter a number");
+                
+             }
+             
+             
+             var result=document.getElementById("preview");
+             var sum;
+             while(num>9)
+            {
+              sum=0;
+             while(num>0)
+               {
+                   sum=sum+(num%10);
+                   num=parseInt(num/10); 
+                }
+                num=sum
+            }
+            result.innerHTML="Result= "+num;
+            
+            
+             if (num==9)
+             {
+                result.innerHTML="Hurrah! Your number is a premium number <br/> "+"Result= "+num;
+                
+             }
+             return false;
+        } 
+    
+        function isInputNumber(evt){
+                
+                var ch = String.fromCharCode(evt.which);
+                
+                if(!(/[0-9]/.test(ch))){
+                    alert("please enter only numbers")
+                    evt.preventDefault();
+                }
+                
+            }
+        
+    </script>
+    
+</body>       
+</html>
